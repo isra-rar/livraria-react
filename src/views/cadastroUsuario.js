@@ -7,24 +7,24 @@ import axios from 'axios';
 export class cadastroUsuario extends Component {
 
 
-  state = {
-    nome: '',
-    cpf: '',
-    email: '',
-    sexo: ''
-  }
   // state = {
   //   nome: '',
   //   cpf: '',
   //   email: '',
-  //   sexo: '',
-  //   endereco: [{
-  //     logradouro: '',
-  //     numero: '',
-  //     bairro: '',
-  //     cep: '',
-  //   }]
+  //   sexo: ''
   // }
+  state = {
+    nome: '',
+    cpf: '',
+    email: '',
+    sexo: '',
+    endereco: {
+      logradouro: '',
+      numero: '',
+      bairro: '',
+      cep: '',
+    }
+  }
 
   cadastrar = () => {
     axios
@@ -32,7 +32,13 @@ export class cadastroUsuario extends Component {
         nome: this.state.nome,
         cpf: this.state.cpf,
         email: this.state.email,
-        sexo: this.state.sexo        
+        sexo: this.state.sexo,
+        enderecos: [{
+          logradouro: this.state.endereco.logradouro,
+          numero: this.state.endereco.numero,
+          bairro: this.state.endereco.bairro,
+          cep: this.state.endereco.cep
+        }]
       }).then(response => {
         console.log(response)
       }).catch(erro => {
@@ -104,6 +110,39 @@ export class cadastroUsuario extends Component {
                     this.setState({ sexo: e.target.value })
                   }} />
               </FormGroup>
+
+              <FormGroup label="Logradouro: *" htmlFor="inputLogradouro">
+                <input type="text" id="inputLogradouro" name="logradouro"
+                  className="form-control"
+                  onChange={(e) => {
+                    this.setState({ endereco: {...this.state.endereco, logradouro: e.target.value} })
+                  }} />
+              </FormGroup>
+
+              <FormGroup label="Numero: *" htmlFor="inputNumero">
+                <input type="text" id="inputNumero" name="numero"
+                  className="form-control"
+                  onChange={(e) => {
+                    this.setState({ endereco: {...this.state.endereco, numero: e.target.value} })
+                  }} />
+              </FormGroup>
+
+              <FormGroup label="Bairro: *" htmlFor="inputBairro">
+                <input type="text" id="inputBairro" name="bairro"
+                  className="form-control"
+                  onChange={(e) => {
+                    this.setState({ endereco: {...this.state.endereco, bairro: e.target.value} })
+                  }} />
+              </FormGroup>
+
+              <FormGroup label="CEP: *" htmlFor="inputCep">
+                <input type="text" id="inputCep" name="cep"
+                  className="form-control"
+                  onChange={(e) => {
+                    this.setState({ endereco: {...this.state.endereco, cep: e.target.value} })
+                  }} />
+              </FormGroup>
+
 
               <button onClick={this.cadastrar} className="btn btn-success">Salvar</button>
               <button onClick={this.backToLogin} className="btn btn-danger">Cancelar</button>
