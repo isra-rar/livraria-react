@@ -22,10 +22,7 @@ export class cadastroUsuario extends Component {
       logradouro: '',
       numero: '',
       bairro: '',
-      cep: '',
-      teste: {
-        teste1:
-      }
+      cep: ''
     }
   }
 
