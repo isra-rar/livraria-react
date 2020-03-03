@@ -30,8 +30,8 @@ export class cadastroLivro extends Component {
   }
 
 
-  backToLogin = () => {
-    this.props.history.push('/login')
+  backToHome = () => {
+    this.props.history.push('/home')
   }
 
   render() {
@@ -67,7 +67,7 @@ export class cadastroLivro extends Component {
               </FormGroup>
 
               <button onClick={this.cadastrar} className="btn btn-success">Salvar</button>
-              <button onClick={this.backToLogin} className="btn btn-danger">Cancelar</button>
+              <button onClick={this.backToHome} className="btn btn-danger">Cancelar</button>
             </div>
           </div>
         </div>
