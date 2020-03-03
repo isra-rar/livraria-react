@@ -6,13 +6,6 @@ import axios from 'axios';
 
 export class cadastroUsuario extends Component {
 
-
-  // state = {
-  //   nome: '',
-  //   cpf: '',
-  //   email: '',
-  //   sexo: ''
-  // }
   state = {
     nome: '',
     cpf: '',
@@ -46,25 +39,6 @@ export class cadastroUsuario extends Component {
       })
   }
 
-  // cadastrar = () => {
-  //   axios
-  //     .post('http://localhost:8080/api/clientes', {
-  //       nome: this.state.nome,
-  //       cpf: this.state.cpf,
-  //       email: this.state.email,
-  //       sexo: this.state.sexo,
-  //       endereco: [{
-  //         logradouro: this.endereco.logradouro,
-  //         numero: this.endereco.numero,
-  //         bairro: this.endereco.bairro,
-  //         cep: this.endereco.cep,
-  //       }]
-  //     }).then(response => {
-  //       console.log(response)
-  //     }).catch(erro => {
-  //       console.log(erro.response);
-  //     })
-  // }
 
 
   backToLogin = () => {

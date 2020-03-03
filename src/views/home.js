@@ -18,7 +18,7 @@ export class Home extends Component {
                     <p className="lead">
                         <a className="btn btn-primary btn-lg" href="#/cadastro-usuario"
                             role="button"><i className="fa fa-users" />  Cadastrar Cliente</a>
-                        <a className="btn btn-danger btn-lg" href="https://bootswatch.com/flatly/#"
+                        <a className="btn btn-danger btn-lg" href="#/cadastro-livro"
                             role="button"><i className="fa fa-users" />  Cadastrar Livro</a>
                     </p>
                 </div>
